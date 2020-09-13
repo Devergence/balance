@@ -1,0 +1,189 @@
+$error: #d8643d;
+$inputBackgroundColor: #e6e6e6;
+$labelColor: #929292;
+
+.input__container {
+  height: 50px;
+  margin-bottom: 25px;
+  position: relative;
+  border-radius: 3px;
+
+  &.validation__error {
+    border: 1px solid $error;
+  }
+
+  .react-datepicker-wrapper {
+    display: block;
+    height: 100%;
+
+    .react-datepicker__input-container {
+      display: block;
+    }
+  }
+}
+
+.form__input {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  border: 1px solid $inputBackgroundColor;
+  border-radius: 3px;
+  padding-left: 15px;
+  padding-top: 10px;
+  background-color: $inputBackgroundColor;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.form__label {
+  font-size: 14px;
+  color: $labelColor;
+  position: absolute;
+  bottom: 50%;
+  left: 15px;
+  transform: translateY(50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+
+  &[for="birthday"] {
+    z-index: 1;
+  }
+  &[for="sex"] {
+    transform: translateY(-8px);
+    font-size: 12px;
+    z-index: 1;
+  }
+}
+
+.top__label {
+  transform: translateY(-8px);
+  font-size: 12px;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label{
+  transform: translateY(-8px);
+  font-size: 12px;
+}
+
+.form__input:focus ~ .form__label {
+  color: #68b671;
+}
+
+.select__container {
+  position: relative;
+
+  &::after {
+    content:"<>";
+    color: $labelColor;
+    right:15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    position:absolute;
+    pointer-events:none;
+  }
+}
+
+.form__select {
+  appearance: none;
+  cursor: pointer;
+
+  option {
+    padding: 10px 0;
+    &:hover {
+
+    }
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: $error;
+  position: absolute;
+  bottom: -20px;
+}
+
+.calendar__icon {
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  svg {
+    fill: #666666;
+  }
+}
+
+:global {
+  .custom__picker {
+    height: 100%;
+
+    .react-datepicker-wrapper,
+    .react-datepicker__input-container{
+      display: block;
+      height: 100%;
+    }
+  }
+
+  .react-datepicker__day--selected,
+  .react-datepicker__day--keyboard-selected{
+    border-radius: 50%;
+    background-color: #68b671;
+  }
+
+  .select__style {
+    .custom__select__control {
+      height: 50px;
+      border-radius: 3px;
+      border: 1px solid $inputBackgroundColor;
+      background-color: $inputBackgroundColor;
+      box-shadow: none;
+
+      &:hover {
+        border-color: $inputBackgroundColor;
+      }
+
+      &--menu-is-open {
+        background-color: white;
+      }
+    }
+
+    .custom__select__value-container {
+      height: 100%;
+    }
+
+    .custom__select__single-value {
+      top: 55%;
+      transform: translateY(-50%);
+      left: 15px;
+      margin-left: 0;
+    }
+
+    .custom__select__option {
+      &:active {
+        background-color: #68b671;
+      }
+      &:hover {
+        background-color: #d1efd4;
+      }
+    }
+
+    .custom__select__option--is-selected,
+    .custom__select__option--is-selected.custom__select__option--is-focused{
+      background-color: #68b671;
+    }
+
+    .custom__select__option--is-focused {
+      background-color: #d1efd4;
+    }
+  }
+}

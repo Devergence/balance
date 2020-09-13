@@ -1,0 +1,46 @@
+.form__container {
+  margin: 0 auto;
+  width: 500px;
+
+  h1 {
+    font-size: 24px;
+    color: #333333;
+  }
+}
+
+.half__group {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    width: 48%;
+  }
+}
+
+.form {
+  text-align: right;
+}
+
+.button {
+  width: 220px;
+  height: 50px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #68b671;
+  margin-left: auto;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
